@@ -1,0 +1,9 @@
+$base-font-size: 1rem;
+
+$body-font-sizes: (
+    null: $base-font-size * 0.8,
+    768px: $base-font-size,
+    1400px: $base-font-size * 1.2
+);
+
+$font-family: "Noto Sans", system-ui, -apple-system, Roboto, "Helvetica Neue";
