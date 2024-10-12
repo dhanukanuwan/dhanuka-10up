@@ -1,3 +1,25 @@
+$primary: #5e7975;
+$primary_lite: #899b9c;
+$secondary: #e3e7e9;
+$secondary_lite: #f0f4f5;
+$white: #ffffff;
+$red: #dc3545;
+$green: #198754;
+
+$text_color_primary: #383838;
+$link_color: $primary;
+
+$theme-colors: (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "dark-text": $text_color_primary,
+    "white": $white,
+    "primary-lite": $primary_lite,
+    "secondary-lite": $secondary_lite,
+    "danger": $red,
+    "success": $green,
+);
+
 $base-font-size: 1rem;
 
 $body-font-sizes: (
@@ -7,3 +29,73 @@ $body-font-sizes: (
 );
 
 $font-family: "Noto Sans", system-ui, -apple-system, Roboto, "Helvetica Neue";
+
+$h1-font-size: $base-font-size * 3.5;
+$h2-font-size: $base-font-size * 3;
+$h3-font-size: $base-font-size * 2.5;
+$h4-font-size: $base-font-size * 2;
+$h5-font-size: $base-font-size * 1.8;
+$h6-font-size: $base-font-size * 1.4;
+
+$spacer: 1rem;
+
+$spacers: (
+  0: 0,
+  1: calc($spacer / 4),
+  2: calc($spacer / 2),
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 6,
+);
+
+$spacer-types: (
+    m: margin,
+    p: padding,
+);
+
+$spacer-directions: (
+    t: top,
+    b: bottom,
+    l: left,
+    r: right,
+);
+
+$column-gap: 1.5rem;
+
+$grid-breakpoints: (
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1300px,
+	xxl: 1400px,
+);
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1200px,
+	xxl: 1320px,
+);
+
+$column-sizes: (
+	1: calc( 100%/12 ),
+	2: calc( 100%/6 ),
+	3: calc( 100%/4 ),
+	4: calc( 100%/3 ),
+	5: calc( (100%/12)*5 ),
+	6: 50%,
+	7: calc( (100%/12)*7 ),
+	8: calc( (100%/12)*8 ),
+	9: calc( (100%/12)*9 ),
+	10: calc( (100%/12)*10 ),
+	11: calc( (100%/12)*11 ),
+	12: 100%,
+);
+
+$position-values: (
+    0: 0,
+    50: 50%,
+    100: 100%
+);

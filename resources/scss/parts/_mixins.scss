@@ -1,5 +1,17 @@
+@use "sass:meta";
+@use "sass:string";
+@use "sass:map";
+@use 'sass:list';
 
-@mixin font-size($fs-map) {
+@import "~rfs/scss";
+
+// get dynamic mixin name.
+@mixin get-dynamic-mixin( $name, $mixin-value ) {
+    @include meta.apply( meta.get-mixin( $name ), $mixin-value );
+}
+
+// Responsive body font sizes.
+@mixin body-font-size($fs-map) {
 	@each $fs-breakpoint, $fs-font-size in $fs-map {
 		@if $fs-breakpoint == null {
 			font-size: $fs-font-size;
@@ -9,6 +21,46 @@
 				font-size: $fs-font-size;
 			}
 		}
+	}
+}
+
+// Generate responsive and non-responsive classes.
+@mixin generate-classes-from-list( $classes-list, $responsive-breakpoint) {
+	@each $class-type, $class-options in $classes-list {
+		$values: map.get( $class-options, "values" );
+		$class-name: map.get( $class-options, "class" );
+		$property: map.get( $class-options, "property" );
+		$type: map.get( $class-options, "type" );
+
+		@if $type == string {
+			@each $value in $values {
+				@if $responsive-breakpoint == null {
+					.#{$class-name}-#{$value} {
+						#{$property}: $value
+					}
+				}
+				@else {
+					.#{$class-name}-#{$responsive-breakpoint}-#{$value} {
+						#{$property}: $value
+					}
+				}
+			}
+		}
+		@else {
+			@each $key, $value in $values {
+				@if $responsive-breakpoint == null {
+					.#{$class-name}-#{$key} {
+						#{$property}: $value
+					}
+				}
+				@else {
+					.#{$class-name}-#{$responsive-breakpoint}-#{$key} {
+						#{$property}: $value
+					}
+				}
+			}
+		}
+	
 	}
 }
   
