@@ -202,3 +202,7 @@ $general-classes: (
 
 // Generate non-responsive classes.
 @include generate-classes-from-list( $general-classes, null );
+
+.hero-content {
+	background-color: transparentize($primary, 0.4);
+}

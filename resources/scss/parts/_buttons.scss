@@ -1,0 +1,31 @@
+@use 'sass:color';
+
+.btn {
+    padding: $btn-padding-y $btn-padding-x;
+    border: 0;
+    border-radius: 0;
+    text-decoration: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out
+}
+
+@each $color-name, $color-code in $theme-colors {
+    .btn-#{$color-name} {
+        background-color: $color-code;
+        @include set-forground-color( $color-code );
+
+        $darker-color: color.adjust($color-code, $lightness: -10%, $space: hsl);
+        
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $darker-color;
+            @include set-forground-color( $darker-color );
+        }
+    }
+}
+
+.line-right {
+    height: 1px;
+    vertical-align: middle;
+    width: 30px;
+}
