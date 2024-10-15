@@ -5,7 +5,8 @@
     border: 0;
     border-radius: 0;
     text-decoration: none;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out
+    transition: color .15s ease-in-out, background-color .15s ease-in-out;
+    cursor: pointer;
 }
 
 @each $color-name, $color-code in $theme-colors {

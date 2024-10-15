@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 $general-responsive-classes: (
 	"display": (
 		property: display,
@@ -204,5 +206,11 @@ $general-classes: (
 @include generate-classes-from-list( $general-classes, null );
 
 .hero-content {
-	background-color: transparentize($primary, 0.4);
+	background-color: color.scale($primary, $alpha: -40%);
+}
+
+.wp-site-blocks {
+	min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
